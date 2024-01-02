@@ -7,3 +7,4 @@ A dashboard application for restaurants that want to visualize order data, using
  - Vite
  - Tailwind
  - TypeScript
+ - Shadcn/ui
