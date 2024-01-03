@@ -8,3 +8,7 @@ A dashboard application for restaurants that want to visualize order data, using
  - Tailwind
  - TypeScript
  - Shadcn/ui
+
+### Home Page 
+
+![Dashboard](public/Dashboard.png)
