@@ -17,7 +17,7 @@ const signUpForm = z.object({
 
 type SignUpForm = z.infer<typeof signUpForm>
 
-export default function SignUp() {
+export function SignUp() {
   const navigate = useNavigate()
 
   const {
