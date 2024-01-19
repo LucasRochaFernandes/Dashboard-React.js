@@ -15,6 +15,7 @@ import {
 
 import { OrderTableFilters } from './orderTableFilters'
 import { OrderTableRow } from './orderTableRow'
+import { OrderTableSkeleton } from './orderTableSkeleton'
 
 export function Orders() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -70,10 +71,13 @@ export function Orders() {
               </TableHeader>
 
               <TableBody>
-                {result &&
+                {result ? (
                   result.orders.map((order) => {
                     return <OrderTableRow key={order.orderId} order={order} />
-                  })}
+                  })
+                ) : (
+                  <OrderTableSkeleton />
+                )}
               </TableBody>
             </Table>
           </div>

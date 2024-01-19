@@ -4,6 +4,8 @@ import { Utensils } from 'lucide-react'
 import { getMonthOrdersAmount } from '@/api/getMonthOrdersAmount'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
+import { MetricCardSkeleton } from './metricCardSkeleton'
+
 export function MonthOrdersAmountCard() {
   const { data: dayMonthOrdersAmount } = useQuery({
     queryFn: getMonthOrdersAmount,
@@ -16,7 +18,7 @@ export function MonthOrdersAmountCard() {
         <Utensils className="h-4 w-4 text-muted-foreground" />
       </CardHeader>
       <CardContent className="space-y-1">
-        {dayMonthOrdersAmount && (
+        {dayMonthOrdersAmount ? (
           <>
             <span className="text-2xl font-bold tracking-tight">
               {dayMonthOrdersAmount.amount.toLocaleString('pt-BR')}
@@ -39,6 +41,8 @@ export function MonthOrdersAmountCard() {
               )}
             </p>
           </>
+        ) : (
+          <MetricCardSkeleton />
         )}
       </CardContent>
     </Card>
